@@ -20,17 +20,17 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #1E2A44;
+  color: #1F2937;
   background:
-    radial-gradient(900px 500px at 90% -10%, rgba(29, 78, 216, 0.06), transparent 60%),
-    radial-gradient(700px 480px at -10% 10%, rgba(29, 78, 216, 0.05), transparent 60%),
+    radial-gradient(900px 500px at 90% -10%, rgba(42, 77, 143, 0.04), transparent 60%),
+    radial-gradient(700px 480px at -10% 10%, rgba(42, 77, 143, 0.03), transparent 60%),
     #FFFFFF;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: rgba(29, 78, 216, 0.16);
-  color: #0B1B3F;
+  background: rgba(42, 77, 143, 0.14);
+  color: #111827;
 }
 
 /* Scrollbar */
@@ -39,15 +39,15 @@ body {
   height: 11px;
 }
 ::-webkit-scrollbar-track {
-  background: #F6F8FD;
+  background: #F8F9FB;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C9D5EC;
+  background: #D1D5DB;
   border-radius: 8px;
-  border: 2px solid #F6F8FD;
+  border: 2px solid #F8F9FB;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #1D4ED8;
+  background: #2A4D8F;
 }
 
 @layer components {
@@ -65,13 +65,13 @@ body {
 
   .btn-primary {
     @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-200;
-    background: #1D4ED8;
-    box-shadow: 0 8px 20px -8px rgba(29, 78, 216, 0.5);
+    background: #2A4D8F;
+    box-shadow: 0 4px 12px -4px rgba(42, 77, 143, 0.35);
   }
   .btn-primary:hover {
-    background: #1A40B0;
+    background: #233F75;
     transform: translateY(-1px);
-    box-shadow: 0 12px 26px -8px rgba(29, 78, 216, 0.55);
+    box-shadow: 0 8px 20px -6px rgba(42, 77, 143, 0.4);
   }
   .btn-primary:disabled {
     @apply opacity-60 cursor-not-allowed;
@@ -107,7 +107,7 @@ body {
   }
 
   .skeleton {
-    background: linear-gradient(90deg, #EEF2FA, #F6F8FD, #EEF2FA);
+    background: linear-gradient(90deg, #F1F3F7, #F8F9FB, #F1F3F7);
     background-size: 1000px 100%;
     @apply rounded-md;
     animation: shimmer 1.8s linear infinite;
@@ -125,5 +125,5 @@ body {
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-  .text-navy { color: #0B1B3F; }
+  .text-navy { color: #111827; }
 }

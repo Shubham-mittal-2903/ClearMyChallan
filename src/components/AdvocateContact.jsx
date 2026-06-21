@@ -146,7 +146,7 @@ export default function AdvocateContact() {
           transition: border-color .15s, box-shadow .15s;
         }
         .input::placeholder { color: #94A3B8; }
-        .input:focus { border-color: #5E86FB; box-shadow: 0 0 0 4px rgba(29,78,216,0.12); }
+        .input:focus { border-color: #6B8ACB; box-shadow: 0 0 0 3px rgba(42,77,143,0.15); }
       `}</style>
     </section>
   )

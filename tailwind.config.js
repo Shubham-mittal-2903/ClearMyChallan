@@ -8,41 +8,45 @@ export default {
         display: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif']
       },
       colors: {
-        // Traffic-police palette: white dominant, blue accent.
         police: {
-          50: '#EEF4FF',
-          100: '#DCE7FF',
-          200: '#BED2FF',
-          300: '#92B2FF',
-          400: '#5E86FB',
-          500: '#3A63F0',
-          600: '#1D4ED8', // primary
-          700: '#1A40B0',
-          800: '#1B3A8F',
-          900: '#1B3370'
+          50: '#F0F4FA',
+          100: '#DFE6F2',
+          200: '#C2D0E8',
+          300: '#96AEDA',
+          400: '#6B8ACB',
+          500: '#3D65B0',
+          600: '#2A4D8F',
+          700: '#233F75',
+          800: '#1D345E',
+          900: '#182B4E'
         },
         ink: {
-          900: '#0B1B3F', // headings (navy)
-          700: '#1E2A44',
-          500: '#475569', // body text
-          400: '#64748B'
+          900: '#111827',
+          700: '#1F2937',
+          500: '#4B5563',
+          400: '#6B7280'
         },
         surface: {
           DEFAULT: '#FFFFFF',
-          soft: '#F6F8FD', // light blue-tinted background
-          muted: '#EEF2FA'
+          soft: '#F8F9FB',
+          muted: '#F1F3F7'
         },
-        line: '#E4E9F2'
+        line: '#E5E7EB',
+        accent: {
+          50: '#EFF6FF',
+          100: '#DBEAFE',
+          600: '#2563EB'
+        }
       },
       boxShadow: {
-        soft: '0 4px 20px -6px rgba(15, 40, 100, 0.10)',
-        card: '0 10px 30px -12px rgba(15, 40, 100, 0.14)',
-        'card-hover': '0 18px 44px -16px rgba(29, 78, 216, 0.22)',
-        ring: '0 0 0 4px rgba(29, 78, 216, 0.12)'
+        soft: '0 1px 3px 0 rgba(0,0,0,0.06), 0 1px 2px -1px rgba(0,0,0,0.06)',
+        card: '0 4px 16px -4px rgba(0,0,0,0.08), 0 1px 3px -1px rgba(0,0,0,0.04)',
+        'card-hover': '0 12px 32px -8px rgba(0,0,0,0.12), 0 4px 8px -2px rgba(0,0,0,0.04)',
+        ring: '0 0 0 3px rgba(42, 77, 143, 0.15)'
       },
       backgroundImage: {
         'blue-fade':
-          'linear-gradient(180deg, #F6F8FD 0%, #FFFFFF 100%)'
+          'linear-gradient(180deg, #F8F9FB 0%, #FFFFFF 100%)'
       },
       animation: {
         'float-slow': 'float 9s ease-in-out infinite',

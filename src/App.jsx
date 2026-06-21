@@ -90,10 +90,10 @@ export default function App() {
           toastOptions={{
             style: {
               background: '#FFFFFF',
-              color: '#0B1B3F',
-              border: '1px solid #E4E9F2',
+              color: '#111827',
+              border: '1px solid #E5E7EB',
               borderRadius: '14px',
-              boxShadow: '0 10px 30px -12px rgba(15,40,100,0.18)',
+              boxShadow: '0 4px 16px -4px rgba(0,0,0,0.08)',
               fontSize: '14px'
             },
             success: { iconTheme: { primary: '#16A34A', secondary: '#FFFFFF' } },
