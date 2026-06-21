@@ -51,13 +51,13 @@ export default function AdvocateContact() {
           transition={{ duration: 0.5 }}
           className="lg:col-span-7 card p-7 sm:p-9"
         >
-          <span className="eyebrow">Advocate Desk</span>
+          <span className="eyebrow">Legal Professional Desk</span>
           <h2 className="mt-3 font-display text-3xl sm:text-4xl font-bold tracking-tight text-navy">
-            Talk to a verified advocate
+            Talk to a verified legal professional
           </h2>
           <p className="mt-3 text-ink-500 max-w-xl">
             Multiple challans, a court summons, or just questions? Reach our
-            advocate desk directly — we respond fast.
+            legal professional desk directly — we respond fast.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">

@@ -25,8 +25,8 @@ export const features = [
   },
   {
     icon: Scale,
-    title: 'Advocate Assisted',
-    desc: 'Every case is handled by a licensed, verified advocate — you never have to visit court.'
+    title: 'Legal Professional Assisted',
+    desc: 'Every case is handled by a licensed, verified legal professional — you never have to visit court.'
   },
   {
     icon: Clock,
@@ -59,12 +59,12 @@ export const steps = [
   {
     n: '02',
     title: 'Share Contact Details',
-    desc: 'Enter your full name, mobile number and email so our advocate can reach you with the quote and updates.'
+    desc: 'Enter your full name, mobile number and email so our legal professional can reach you with the quote and updates.'
   },
   {
     n: '03',
-    title: 'Advocate Reviews Within 24 Hours',
-    desc: 'A licensed advocate manually reviews your case and gets back to you with a transparent quoted price.'
+    title: 'Legal Professional Reviews Within 24 Hours',
+    desc: 'A licensed legal professional manually reviews your case and gets back to you with a transparent quoted price.'
   },
   {
     n: '04',
@@ -74,7 +74,7 @@ export const steps = [
   {
     n: '05',
     title: 'Case Processed & Disposed',
-    desc: 'Your assigned advocate handles the entire process — no court visit. Disposal in 20–25 days, or full refund.'
+    desc: 'Your assigned legal professional handles the entire process — no court visit. Disposal in 20–25 days, or full refund.'
   }
 ]
 
@@ -94,7 +94,7 @@ export const safetyPoints = [
   {
     icon: Scale,
     title: 'Challan Info Protected',
-    desc: 'Challan records are accessible only to the advocate assigned to your case.'
+    desc: 'Challan records are accessible only to the legal professional assigned to your case.'
   },
   {
     icon: RotateCcw,
@@ -112,7 +112,7 @@ export const trustBadges = [
   'Secure Data Handling',
   'Encrypted Information',
   'Data Deleted After Disposal',
-  'Advocate Assisted Process'
+  'Legal Professional Assisted'
 ]
 
 export const faqs = [
@@ -130,7 +130,7 @@ export const faqs = [
   },
   {
     q: 'Do I need to visit court?',
-    a: 'No. Our advocate-assisted process handles everything on your behalf — no court visit required.'
+    a: 'No. Our legal professional-assisted process handles everything on your behalf — no court visit required.'
   }
 ]
 
@@ -146,7 +146,7 @@ export const testimonials = [
     name: 'Priya Sharma',
     role: 'IT Professional, Noida',
     quote:
-      'The flat city-based pricing is genuinely transparent. The advocate kept me updated and I never had to step into a court.',
+      'The flat city-based pricing is genuinely transparent. The legal professional kept me updated and I never had to step into a court.',
     initial: 'P'
   },
   {
@@ -248,7 +248,7 @@ export const legalSections = [
         h: 'How we use your information',
         p: [
           'To look up and display the challans associated with the registration number you provide.',
-          'To assign a verified advocate to your case and keep you updated on its progress.',
+          'To assign a verified legal professional to your case and keep you updated on its progress.',
           'To process payments and issue refunds where applicable under our Refund Policy.',
           'To comply with applicable Indian law and respond to lawful requests from authorities.'
         ]
@@ -304,8 +304,8 @@ export const legalSections = [
       {
         h: 'The service',
         p: [
-          'ClearMyChallan is a technology platform that connects users with independent, licensed advocates who handle the resolution of vehicle challans before the relevant authority or court.',
-          'ClearMyChallan Technologies Pvt. Ltd. is not a law firm and does not itself practise law. The advocate-client relationship, when formed, is between you and the assigned advocate.',
+          'ClearMyChallan is a technology platform that connects users with independent, licensed legal professionals who handle the resolution of vehicle challans before the relevant authority or court.',
+          'ClearMyChallan Technologies Pvt. Ltd. is not a law firm and does not itself practise law. The legal professional-client relationship, when formed, is between you and the assigned legal professional.',
           'Disposal timelines are estimates based on historical performance. Most cases close in 20–25 days but actual durations may vary due to court schedules and authority response times.'
         ]
       },
@@ -321,7 +321,7 @@ export const legalSections = [
         h: 'User obligations',
         p: [
           'Submit only challans that are legitimately associated with a vehicle you own or are authorised to act for.',
-          'Provide any documents reasonably requested by the assigned advocate (e.g. RC copy, ID proof) within the requested time.',
+          'Provide any documents reasonably requested by the assigned legal professional (e.g. RC copy, ID proof) within the requested time.',
           'Do not use the platform to obstruct justice, evade lawful fines arising from grievous offences, or harass any individual.'
         ]
       },
@@ -358,7 +358,7 @@ export const legalSections = [
         h: 'The 25-day guarantee',
         p: [
           'If your challan is not disposed within 25 calendar days from the date of payment confirmation, you are entitled to a full refund of the amount paid to us.',
-          'The 25-day clock starts only after you have submitted all documents reasonably requested by the assigned advocate.'
+          'The 25-day clock starts only after you have submitted all documents reasonably requested by the assigned legal professional.'
         ]
       },
       {
@@ -371,7 +371,7 @@ export const legalSections = [
       {
         h: 'Exclusions',
         p: [
-          'Refunds will not be granted where (a) the challan was already disposed within the timeline, (b) the user supplied false or incomplete information that materially affected the case, or (c) the case was withdrawn by the user before the advocate began acting.',
+          'Refunds will not be granted where (a) the challan was already disposed within the timeline, (b) the user supplied false or incomplete information that materially affected the case, or (c) the case was withdrawn by the user before the legal professional began acting.',
           'Government / court fees that have already been paid to authorities on your behalf are non-refundable.'
         ]
       },
@@ -393,7 +393,7 @@ export const legalSections = [
         h: 'Not a law firm',
         p: [
           'ClearMyChallan Technologies Pvt. Ltd. is a technology platform. It is not a law firm and does not provide legal advice or legal representation.',
-          'Advocates accessed through the platform are independent professionals enrolled with their respective State Bar Councils. The advocate-client relationship is between you and the assigned advocate.'
+          'Legal professionals accessed through the platform are independent practitioners enrolled with their respective State Bar Councils. The legal professional-client relationship is between you and the assigned legal professional.'
         ]
       },
       {

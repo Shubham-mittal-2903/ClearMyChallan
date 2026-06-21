@@ -157,7 +157,7 @@ export default function TrackCase() {
             </h1>
             <p className="mt-3 text-ink-500">
               Enter your Case ID or registered mobile number to see the latest
-              status, quoted price and advocate notes.
+              status, quoted price and notes from your legal professional.
             </p>
           </motion.div>
 
@@ -286,7 +286,7 @@ export default function TrackCase() {
                           <Clock className="w-3.5 h-3.5" /> Awaiting Quote
                         </div>
                         <div className="mt-1 text-sm text-ink-500">
-                          Our advocate is reviewing your case. You&apos;ll see the
+                          Our legal professional is reviewing your case. You&apos;ll see the
                           price here as soon as it&apos;s set.
                         </div>
                       </div>
@@ -295,13 +295,13 @@ export default function TrackCase() {
                     {result.latestNote && (
                       <div className="rounded-xl border border-line bg-white p-4">
                         <div className="text-[11px] uppercase tracking-wider text-ink-400 font-semibold flex items-center gap-1.5">
-                          <Receipt className="w-3.5 h-3.5" /> Latest Advocate Note
+                          <Receipt className="w-3.5 h-3.5" /> Latest Note
                         </div>
                         <p className="mt-2 text-sm text-ink-700 leading-relaxed">
                           {result.latestNote.message}
                         </p>
                         <div className="text-xs text-ink-400 mt-2">
-                          {result.latestNote.author || 'Advocate'} ·{' '}
+                          {result.latestNote.author || 'Legal Professional'} ·{' '}
                           {new Date(result.latestNote.at).toLocaleString('en-IN')}
                         </div>
                       </div>

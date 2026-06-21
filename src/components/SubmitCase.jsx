@@ -155,7 +155,7 @@ function SuccessScreen({ result }) {
         Documents Received Successfully
       </h2>
       <p className="mt-3 text-ink-500">
-        Our advocate will review your case and contact you within{' '}
+        Our legal professional will review your case and contact you within{' '}
         <span className="font-semibold text-navy">24 hours</span>.
       </p>
 
@@ -230,7 +230,7 @@ export default function SubmitCase() {
         },
         setProgress
       )
-      toast.success('Submitted! Our advocate will reach out within 24 hours.')
+      toast.success('Submitted! Our legal professional will reach out within 24 hours.')
       setResult(data)
     } catch (err) {
       toast.error(extractError(err, 'Submission failed. Please try again.'))
@@ -254,12 +254,12 @@ export default function SubmitCase() {
         >
           <span className="eyebrow">Submit Your Case</span>
           <h2 className="mt-3 font-display text-3xl sm:text-4xl font-bold tracking-tight text-navy">
-            Our advocate will contact you within 24 hours
+            Our legal professional will contact you within 24 hours
           </h2>
           <p className="mt-3 text-ink-500">
-            Upload your RC and Challan, share your contact details — our team
-            reviews every case manually and gets back to you with a transparent
-            price quote.
+            Upload your RC and Challan, share your contact details — our legal
+            professionals review every case manually and get back to you with a
+            transparent price quote.
           </p>
         </motion.div>
 
@@ -417,7 +417,7 @@ export default function SubmitCase() {
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Clock className="w-3.5 h-3.5 text-police-600" />
-                Advocate responds within 24 hours.
+                Legal professional responds within 24 hours.
               </span>
             </div>
           </motion.form>

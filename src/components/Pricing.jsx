@@ -105,7 +105,7 @@ export default function Pricing() {
           Prices shown are the all-inclusive resolution amount you pay. &quot;Flat
           X%&quot; means you pay X% of the original fine. Final pricing is confirmed
           before payment. Government fees, where applicable, are handled by the
-          assigned advocate.
+          assigned legal professional.
         </p>
       </div>
     </section>

@@ -74,7 +74,7 @@ export default function UPIPayment({ caseId, amount, onPaid }) {
     setSubmitting(true)
     try {
       await submitPaymentProof(caseId, { utr: utr.trim(), note: note.trim() })
-      toast.success('Payment details received. Advocate will verify soon.')
+      toast.success('Payment details received. Our team will verify soon.')
       setSubmitted(true)
       onPaid?.()
     } catch (err) {
@@ -135,7 +135,7 @@ export default function UPIPayment({ caseId, amount, onPaid }) {
           Payment details submitted
         </div>
         <p className="text-sm text-green-900/80 mt-2 max-w-md mx-auto">
-          Our advocate is verifying your transaction. Status will change to{' '}
+          Our team is verifying your transaction. Status will change to{' '}
           <span className="font-semibold">Payment Received</span> within a few
           hours — usually faster during business hours.
         </p>
@@ -499,7 +499,7 @@ export default function UPIPayment({ caseId, amount, onPaid }) {
           </motion.button>
 
           <p className="text-[11px] text-ink-400 text-center">
-            Our advocate verifies UTRs manually. Status will change to{' '}
+            Our team verifies UTRs manually. Status will change to{' '}
             <span className="font-semibold text-ink-500">Payment Received</span>{' '}
             once confirmed.
           </p>

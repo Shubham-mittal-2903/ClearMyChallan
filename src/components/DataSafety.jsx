@@ -22,7 +22,7 @@ export default function DataSafety() {
             </h2>
             <p className="mt-3 text-ink-500 leading-relaxed">
               We treat your information like it&apos;s our own. Everything is
-              encrypted, access is restricted to your assigned advocate, and
+              encrypted, access is restricted to your assigned legal professional, and
               your data is permanently deleted once your challan is disposed.
             </p>
 

@@ -17,7 +17,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-4 text-sm text-ink-500 max-w-md leading-relaxed">
-              Advocate-assisted vehicle challan resolution at transparent,
+              Legal professional-assisted vehicle challan resolution at transparent,
               city-based prices starting as low as 60% of the original fine.
               Secure, encrypted and refund-backed.
             </p>
