@@ -21,6 +21,7 @@ import BackgroundOrbs from '../components/ui/BackgroundOrbs.jsx'
 import UPIPayment from '../components/UPIPayment.jsx'
 import { trackCase } from '../services/case.service.js'
 import { extractError } from '../services/api.js'
+import useSEO from '../hooks/useSEO.js'
 
 const STATUS_ORDER = [
   'Pending Review',
@@ -86,6 +87,12 @@ function StatusPill({ status }) {
 }
 
 export default function TrackCase() {
+  useSEO({
+    title: 'Track Your Challan Case',
+    description:
+      'Track the status of your submitted challan case using your Case ID or mobile number — real-time updates from submission to disposal.',
+    path: '/track'
+  })
   const [searchParams, setSearchParams] = useSearchParams()
   const [mode, setMode] = useState('caseId') // 'caseId' | 'mobile'
   const [value, setValue] = useState('')

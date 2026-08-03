@@ -23,6 +23,8 @@ import FloatingSupport from './components/FloatingSupport.jsx'
 import BackgroundOrbs from './components/ui/BackgroundOrbs.jsx'
 
 import TrackCase from './pages/TrackCase.jsx'
+import Blog from './pages/Blog.jsx'
+import BlogPost from './pages/BlogPost.jsx'
 import AdminLogin from './pages/AdminLogin.jsx'
 import AdminDashboard from './pages/AdminDashboard.jsx'
 import AdminCaseDetail from './pages/AdminCaseDetail.jsx'
@@ -62,6 +64,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<PublicHome />} />
           <Route path="/track" element={<TrackCase />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
 
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route

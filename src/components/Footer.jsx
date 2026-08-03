@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { ShieldCheck, Phone, MessageCircle, Mail } from 'lucide-react'
 import { SITE } from '../data/site.js'
 
@@ -49,7 +50,7 @@ export default function Footer() {
             <FooterCol
               title="Company"
               links={[
-                ['About', '#'],
+                ['Blog', '/blog'],
                 ['FAQ', '#faq'],
                 ['Contact', '#contact']
               ]}
