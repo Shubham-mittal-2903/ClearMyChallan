@@ -273,7 +273,7 @@ export const legalSections = [
       {
         h: 'Your rights',
         p: [
-          'You may request access, correction or deletion of your personal data at any time by writing to help@clearmychallan.co.in.',
+          'You may request access, correction or deletion of your personal data at any time by contacting us via phone or WhatsApp.',
           'You can withdraw consent for non-essential processing. Withdrawal does not affect cases already in disposal.',
           'You may raise grievances with our Grievance Officer (contact details below).'
         ]
@@ -282,7 +282,7 @@ export const legalSections = [
         h: 'Grievance Officer',
         p: [
           'Name: Grievance Officer, ClearMyChallan Technologies Pvt. Ltd.',
-          'Email: grievance@clearmychallan.co.in · Phone: +91 8000727771',
+          'Phone: +91 8000727771 (also available on WhatsApp)',
           'Response time: within 30 days of receiving your complaint.'
         ]
       }
@@ -364,7 +364,7 @@ export const legalSections = [
       {
         h: 'How to request a refund',
         p: [
-          'Write to refund@clearmychallan.co.in from the email used at signup, with your case reference number.',
+          'Contact us via phone or WhatsApp with your case reference number to initiate a refund.',
           'Refunds are initiated within 3 business days of approval and typically credit back to the original payment method within 5–10 business days.'
         ]
       },

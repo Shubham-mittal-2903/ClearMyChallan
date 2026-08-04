@@ -4,7 +4,6 @@ import toast from 'react-hot-toast'
 import {
   MessageCircle,
   Phone,
-  Mail,
   ArrowRight,
   ShieldCheck,
   Loader2,
@@ -67,9 +66,6 @@ export default function AdvocateContact() {
             </a>
             <a href={SITE.telHref} className="btn-primary">
               <Phone className="w-4 h-4" /> Call {SITE.phoneDisplay}
-            </a>
-            <a href={`mailto:${SITE.email}`} className="btn-secondary">
-              <Mail className="w-4 h-4" /> {SITE.email}
             </a>
           </div>
 

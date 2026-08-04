@@ -104,11 +104,11 @@ export default function Legal() {
 
         <p className="mt-8 text-xs text-ink-400 text-center max-w-2xl mx-auto">
           These documents are provided in good faith and are subject to change.
-          For questions, contact{' '}
-          <a href="mailto:help@clearmychallan.co.in" className="text-police-600 underline">
-            help@clearmychallan.co.in
-          </a>
-          .
+          For questions, call{' '}
+          <a href="tel:+918000727771" className="text-police-600 underline">
+            8000727771
+          </a>{' '}
+          or reach us on WhatsApp.
         </p>
       </div>
     </section>

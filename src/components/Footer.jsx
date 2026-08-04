@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ShieldCheck, Phone, MessageCircle, Mail } from 'lucide-react'
+import { ShieldCheck, Phone, MessageCircle } from 'lucide-react'
 import { SITE } from '../data/site.js'
 
 export default function Footer() {
@@ -29,9 +29,6 @@ export default function Footer() {
               </a>
               <a href={SITE.whatsappHref()} target="_blank" rel="noreferrer" className="badge-trust">
                 <MessageCircle className="w-4 h-4 text-green-600" /> WhatsApp
-              </a>
-              <a href={`mailto:${SITE.email}`} className="badge-trust">
-                <Mail className="w-4 h-4 text-police-600" /> Email
               </a>
             </div>
           </div>
