@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   ArrowRight,
@@ -16,8 +15,7 @@ import {
   X,
   Loader2,
   Headphones,
-  Sparkles,
-  Zap
+  Sparkles
 } from 'lucide-react'
 import { SITE } from '../data/site.js'
 import { trustBadges } from '../data/content.js'
@@ -86,10 +84,10 @@ function AgentConnectModal({ open, onClose }) {
 }
 
 export default function Hero() {
-  const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   const [vehicle, setVehicle] = useState('')
   const [rcFile, setRcFile] = useState(null)
   const [showModal, setShowModal] = useState(false)
+  const [showUpload, setShowUpload] = useState(false)
   const fileRef = useRef(null)
 
   const handleFile = (f) => {
@@ -109,249 +107,213 @@ export default function Hero() {
   return (
     <>
       <AgentConnectModal open={showModal} onClose={() => setShowModal(false)} />
-      <section id="home" className="relative pt-28 md:pt-36 pb-16 md:pb-20">
-        <div className="section-pad">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            {/* Left */}
-            <div className="lg:col-span-7">
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="chip mb-5"
+      <section id="home" className="relative min-h-[92vh] flex items-end overflow-hidden bg-navy">
+        {/* Cinematic video background */}
+        <video
+          src="/videos/demo-1.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/55 to-navy" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/10 to-transparent" />
+
+        <div className="relative z-10 section-pad w-full pt-40 pb-14 md:pb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white/90 bg-white/10 border border-white/20 backdrop-blur-md px-4 py-2 rounded-full"
+          >
+            <ShieldCheck className="w-3.5 h-3.5" />
+            Legal professional-assisted traffic challan resolution
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.05 }}
+            className="mt-6 font-display text-[42px] sm:text-6xl lg:text-[72px] leading-[1.02] font-extrabold tracking-tight text-white max-w-4xl"
+          >
+            Check your challan status{' '}
+            <span className="bg-gradient-to-r from-police-300 to-white bg-clip-text text-transparent">
+              instantly.
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="mt-5 text-base sm:text-lg text-white/70 max-w-xl leading-relaxed"
+          >
+            One vehicle number. Full clarity. Resolution in{' '}
+            <span className="font-semibold text-white">{SITE.disposalTime}</span>, or a full refund.
+          </motion.p>
+
+          {/* --- Floating search-style lookup card --- */}
+          <motion.form
+            onSubmit={onCheckStatus}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25 }}
+            className="mt-9 max-w-2xl"
+          >
+            <div className="flex flex-col sm:flex-row items-stretch gap-2 bg-white rounded-2xl sm:rounded-full p-2 shadow-card">
+              <div className="relative flex-1 flex items-center">
+                <Car className="absolute left-4 w-4 h-4 text-ink-400" />
+                <input
+                  value={vehicle}
+                  onChange={(e) => setVehicle(e.target.value.toUpperCase().replace(/\s+/g, ''))}
+                  placeholder="Enter vehicle number — e.g. DL10CA1234"
+                  maxLength={15}
+                  className="w-full pl-11 pr-4 py-3.5 sm:py-3 bg-transparent font-mono tracking-[0.1em] text-sm sm:text-base outline-none text-navy placeholder:text-ink-400/70 placeholder:font-sans placeholder:tracking-normal"
+                />
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowUpload((s) => !s)}
+                className={`shrink-0 inline-flex items-center justify-center gap-1.5 px-4 py-3 sm:py-2.5 rounded-full text-sm font-medium transition-colors ${
+                  rcFile
+                    ? 'bg-police-50 text-police-700 border border-police-200'
+                    : 'text-ink-500 hover:bg-surface-soft border border-transparent'
+                }`}
               >
-                <ShieldCheck className="w-3.5 h-3.5" />
-                Legal professional-assisted traffic challan resolution
-              </motion.div>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.05 }}
-                className="font-display text-4xl sm:text-5xl lg:text-[56px] leading-[1.08] font-extrabold tracking-tight text-navy"
-              >
-                Check your challan status{' '}
-                <span className="text-police-600">instantly.</span>
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.12 }}
-                className="mt-5 text-base sm:text-lg text-ink-500 max-w-2xl leading-relaxed"
-              >
-                Enter your vehicle number, upload your RC or Challan print — our
-                team connects with you in minutes with complete challan details
-                and resolution options. Disposal in{' '}
-                <span className="font-semibold text-ink-700">{SITE.disposalTime}</span>,
-                or full refund.
-              </motion.p>
-
-              {/* --- Quick Challan Lookup Form --- */}
-              <motion.form
-                onSubmit={onCheckStatus}
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.18 }}
-                className="mt-7 card p-5 sm:p-6 max-w-xl relative overflow-hidden"
-              >
-                {/* Ambient accent glow */}
-                <div className="pointer-events-none absolute -top-16 -right-16 w-40 h-40 bg-police-400/10 rounded-full blur-3xl" />
-
-                <div className="relative flex items-center justify-between mb-1">
-                  <span className="inline-flex items-center gap-1.5 text-sm font-bold text-navy">
-                    <Zap className="w-4 h-4 text-police-600" />
-                    Quick Lookup
-                  </span>
-                  <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wide text-green-700 bg-green-50 border border-green-200 px-2.5 py-1 rounded-full">
-                    <Sparkles className="w-3 h-3" /> Free Check
-                  </span>
-                </div>
-
-                <div className="relative grid gap-4 mt-3">
-                  {/* Vehicle Number */}
-                  <div>
-                    <label className="text-xs font-semibold uppercase tracking-wider text-ink-400">
-                      Vehicle Number
-                    </label>
-                    <div className="mt-2 relative rounded-full bg-white border-2 border-line focus-within:border-police-400 focus-within:shadow-ring transition-all">
-                      <Car className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-400" />
-                      <input
-                        value={vehicle}
-                        onChange={(e) => setVehicle(e.target.value.toUpperCase().replace(/\s+/g, ''))}
-                        placeholder="e.g. DL10CA1234"
-                        maxLength={15}
-                        className="w-full pl-11 pr-4 py-3.5 bg-transparent font-mono tracking-[0.14em] text-base outline-none text-navy placeholder:text-ink-400/60"
-                      />
-                    </div>
-                  </div>
-
-                  {/* RC / Challan Upload */}
-                  <div>
-                    <label className="text-xs font-semibold uppercase tracking-wider text-ink-400">
-                      RC / Challan Print
-                      <span className="ml-1.5 normal-case font-normal text-ink-400/80 tracking-normal">
-                        (optional)
-                      </span>
-                    </label>
-                    <div
-                      onClick={() => fileRef.current?.click()}
-                      className={`mt-2 cursor-pointer rounded-xl border-2 border-dashed p-4 transition-all ${
-                        rcFile
-                          ? 'border-police-300 bg-police-50/40'
-                          : 'border-line bg-surface-soft hover:border-police-300 hover:bg-police-50/40'
-                      }`}
-                    >
-                      <input
-                        ref={fileRef}
-                        type="file"
-                        accept=".jpg,.jpeg,.png,.pdf"
-                        className="hidden"
-                        onChange={(e) => handleFile(e.target.files?.[0])}
-                      />
-                      {rcFile ? (
-                        <div className="flex items-center gap-3">
-                          <FileText className="w-5 h-5 text-police-600 shrink-0" />
-                          <span className="text-sm font-medium text-navy truncate flex-1">
-                            {rcFile.name}
-                          </span>
-                          <button
-                            type="button"
-                            onClick={(e) => { e.stopPropagation(); setRcFile(null) }}
-                            className="w-7 h-7 rounded-full hover:bg-white border border-transparent hover:border-line flex items-center justify-center text-ink-400"
-                          >
-                            <X className="w-3.5 h-3.5" />
-                          </button>
-                        </div>
-                      ) : (
-                        <div className="flex items-center gap-3 text-sm text-ink-400">
-                          <Upload className="w-5 h-5 text-police-400" />
-                          <span>
-                            Drop or click to upload RC / Challan print{' '}
-                            <span className="text-xs">(JPG, PNG, PDF)</span>
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-
-                <button type="submit" className="btn-primary w-full !py-3.5 mt-5 !rounded-full group">
-                  <Search className="w-4 h-4" />
-                  Check Challan Status
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                </button>
-
-                <div className="mt-3 flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2 text-xs text-ink-400">
-                    <Lock className="w-3.5 h-3.5 text-green-600" />
-                    Encrypted & secure — your data is never stored.
-                  </div>
-                  <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium text-ink-400">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-                    </span>
-                    Agents online
-                  </span>
-                </div>
-              </motion.form>
-
-              {/* Trust badges */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="mt-7 flex flex-wrap gap-2.5"
-              >
-                {trustBadges.map((b) => (
-                  <span key={b} className="badge-trust">
-                    <CheckCircle2 className="w-4 h-4 text-green-600" />
-                    {b}
-                  </span>
-                ))}
-              </motion.div>
+                <FileText className="w-4 h-4" />
+                {rcFile ? 'RC attached' : 'Attach RC'}
+              </button>
+              <button type="submit" className="btn-primary !py-3.5 sm:!py-3 !rounded-full !px-6 group">
+                <Search className="w-4 h-4" />
+                <span className="hidden sm:inline">Check Status</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+              </button>
             </div>
 
-            {/* Right — assurance card */}
-            <div className="lg:col-span-5">
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="card p-6 sm:p-7 relative overflow-visible"
-              >
-                <span className="absolute -top-3 left-6 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide text-white bg-police-600 px-3 py-1.5 rounded-full shadow-soft">
-                  <ShieldCheck className="w-3 h-3" /> Verified Platform
-                </span>
-
-                <div className="flex items-center justify-between pt-1">
-                  <span className="eyebrow">Service Guarantee</span>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-green-700 bg-green-50 border border-green-200 px-2.5 py-1 rounded-full">
-                    <Lock className="w-3 h-3" /> Secure
-                  </span>
-                </div>
-
-                <div className="mt-5 rounded-xl bg-police-600 p-5 text-white">
-                  <div className="flex items-center gap-2.5 text-police-100 text-xs uppercase tracking-wider font-semibold">
-                    <Clock className="w-4 h-4" /> Legal professional response
-                  </div>
-                  <div className="mt-2 font-display text-2xl sm:text-3xl font-extrabold">
-                    Within 24 hours
-                  </div>
-                  <p className="text-sm text-police-100 mt-1">
-                    Real human review of every uploaded case.
-                  </p>
-                </div>
-
-                <div className="mt-4 grid gap-3">
-                  {[
-                    {
-                      icon: Clock,
-                      title: `Disposed in ${SITE.disposalTime}`,
-                      sub: 'Most cases closed within 20–25 days.'
-                    },
-                    {
-                      icon: RotateCcw,
-                      title: '100% Refund Guarantee',
-                      sub: SITE.refundPolicy
-                    },
-                    {
-                      icon: ShieldCheck,
-                      title: 'Encrypted & Deleted',
-                      sub: 'Data encrypted, then deleted after disposal.'
-                    }
-                  ].map((item) => {
-                    const Icon = item.icon
-                    return (
-                      <div
-                        key={item.title}
-                        className="flex items-start gap-3 rounded-xl border border-line bg-surface-soft p-3.5"
-                      >
-                        <span className="shrink-0 w-9 h-9 rounded-lg bg-police-600/10 border border-police-200 flex items-center justify-center">
-                          <Icon className="w-4.5 h-4.5 text-police-600" />
+            <AnimatePresence>
+              {showUpload && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="overflow-hidden"
+                >
+                  <div
+                    onClick={() => fileRef.current?.click()}
+                    className="mt-2.5 cursor-pointer rounded-2xl border-2 border-dashed border-white/30 bg-white/10 backdrop-blur-md p-4 hover:bg-white/15 transition-colors"
+                  >
+                    <input
+                      ref={fileRef}
+                      type="file"
+                      accept=".jpg,.jpeg,.png,.pdf"
+                      className="hidden"
+                      onChange={(e) => handleFile(e.target.files?.[0])}
+                    />
+                    {rcFile ? (
+                      <div className="flex items-center gap-3">
+                        <FileText className="w-5 h-5 text-white shrink-0" />
+                        <span className="text-sm font-medium text-white truncate flex-1">
+                          {rcFile.name}
                         </span>
-                        <div>
-                          <div className="font-semibold text-navy text-sm">{item.title}</div>
-                          <div className="text-xs text-ink-500 mt-0.5">{item.sub}</div>
-                        </div>
+                        <button
+                          type="button"
+                          onClick={(e) => { e.stopPropagation(); setRcFile(null) }}
+                          className="w-7 h-7 rounded-full hover:bg-white/20 flex items-center justify-center text-white/80"
+                        >
+                          <X className="w-3.5 h-3.5" />
+                        </button>
                       </div>
-                    )
-                  })}
-                </div>
+                    ) : (
+                      <div className="flex items-center gap-3 text-sm text-white/70">
+                        <Upload className="w-5 h-5" />
+                        <span>Drop or click to upload RC / Challan print (JPG, PNG, PDF)</span>
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
-                {/* Quick action buttons */}
-                <div className="mt-5 grid grid-cols-2 gap-2">
-                  <button onClick={() => go('submit')} className="btn-primary text-sm">
-                    <Upload className="w-4 h-4" /> Submit Docs
-                  </button>
-                  <Link to="/track" className="btn-secondary text-sm text-center">
-                    <Clock className="w-4 h-4" /> Track Case
-                  </Link>
+            <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-white/60">
+              <span className="inline-flex items-center gap-1.5">
+                <Lock className="w-3.5 h-3.5 text-green-400" />
+                Encrypted — your data is never stored
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-green-400" />
+                100% free to check
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                </span>
+                Agents online now
+              </span>
+            </div>
+          </motion.form>
+
+          {/* Trust badges */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-8 flex flex-wrap gap-2.5"
+          >
+            {trustBadges.map((b) => (
+              <span
+                key={b}
+                className="inline-flex items-center gap-1.5 text-xs font-medium text-white/80 bg-white/10 border border-white/15 backdrop-blur-md px-3 py-1.5 rounded-full"
+              >
+                <CheckCircle2 className="w-3.5 h-3.5 text-green-400" />
+                {b}
+              </span>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Guarantee strip */}
+      <section className="relative bg-white border-b border-line">
+        <div className="section-pad py-8 grid sm:grid-cols-3 gap-4">
+          {[
+            {
+              icon: Clock,
+              title: `Disposed in ${SITE.disposalTime}`,
+              sub: 'Most cases closed within 20–25 days.'
+            },
+            {
+              icon: RotateCcw,
+              title: '100% Refund Guarantee',
+              sub: SITE.refundPolicy
+            },
+            {
+              icon: ShieldCheck,
+              title: 'Encrypted & Deleted',
+              sub: 'Data encrypted, then deleted after disposal.'
+            }
+          ].map((item, i) => {
+            const Icon = item.icon
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="flex items-center gap-3.5"
+              >
+                <span className="shrink-0 w-11 h-11 rounded-xl bg-police-50 border border-police-100 flex items-center justify-center">
+                  <Icon className="w-5 h-5 text-police-600" />
+                </span>
+                <div>
+                  <div className="font-semibold text-navy text-sm">{item.title}</div>
+                  <div className="text-xs text-ink-500 mt-0.5">{item.sub}</div>
                 </div>
               </motion.div>
-            </div>
-          </div>
+            )
+          })}
         </div>
       </section>
     </>

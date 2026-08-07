@@ -1,14 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ShieldCheck, Search, Siren } from 'lucide-react'
+import { Search, Smartphone } from 'lucide-react'
 
 const clips = [
-  {
-    src: '/videos/demo-1.mp4',
-    icon: ShieldCheck,
-    title: 'Verified & Resolved',
-    desc: 'Every case is tracked from submission to disposal — verified at each step.'
-  },
   {
     src: '/videos/demo-2.mp4',
     icon: Search,
@@ -17,9 +11,9 @@ const clips = [
   },
   {
     src: '/videos/demo-3.mp4',
-    icon: Siren,
-    title: 'Built for Indian Traffic Law',
-    desc: 'Our process is designed around how traffic enforcement actually works on the ground.'
+    icon: Smartphone,
+    title: 'Track It From Your Phone',
+    desc: 'Follow your case status end-to-end — Legal Review, Processing, Resolved — right from your phone.'
   }
 ]
 
@@ -39,12 +33,12 @@ export default function VideoShowcase() {
             How your challan gets resolved
           </h2>
           <p className="mt-3 text-ink-500">
-            From verification to record checks to on-ground enforcement realities —
-            here&apos;s what happens behind the scenes.
+            From verification to real-time record checks — here&apos;s what happens
+            behind the scenes.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
           {clips.map((clip, i) => {
             const Icon = clip.icon
             return (
