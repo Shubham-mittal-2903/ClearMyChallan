@@ -15,7 +15,9 @@ import {
   FileText,
   X,
   Loader2,
-  Headphones
+  Headphones,
+  Sparkles,
+  Zap
 } from 'lucide-react'
 import { SITE } from '../data/site.js'
 import { trustBadges } from '../data/content.js'
@@ -151,22 +153,35 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.18 }}
-                className="mt-7 card p-5 sm:p-6 max-w-xl"
+                className="mt-7 card p-5 sm:p-6 max-w-xl relative overflow-hidden"
               >
-                <div className="grid gap-4">
+                {/* Ambient accent glow */}
+                <div className="pointer-events-none absolute -top-16 -right-16 w-40 h-40 bg-police-400/10 rounded-full blur-3xl" />
+
+                <div className="relative flex items-center justify-between mb-1">
+                  <span className="inline-flex items-center gap-1.5 text-sm font-bold text-navy">
+                    <Zap className="w-4 h-4 text-police-600" />
+                    Quick Lookup
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wide text-green-700 bg-green-50 border border-green-200 px-2.5 py-1 rounded-full">
+                    <Sparkles className="w-3 h-3" /> Free Check
+                  </span>
+                </div>
+
+                <div className="relative grid gap-4 mt-3">
                   {/* Vehicle Number */}
                   <div>
                     <label className="text-xs font-semibold uppercase tracking-wider text-ink-400">
                       Vehicle Number
                     </label>
-                    <div className="mt-2 relative rounded-xl bg-white border border-line focus-within:border-police-400 focus-within:shadow-ring transition-all">
+                    <div className="mt-2 relative rounded-full bg-white border-2 border-line focus-within:border-police-400 focus-within:shadow-ring transition-all">
                       <Car className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-400" />
                       <input
                         value={vehicle}
                         onChange={(e) => setVehicle(e.target.value.toUpperCase().replace(/\s+/g, ''))}
                         placeholder="e.g. DL10CA1234"
                         maxLength={15}
-                        className="w-full pl-11 pr-4 py-3 bg-transparent font-mono tracking-[0.14em] text-base outline-none text-navy placeholder:text-ink-400/60"
+                        className="w-full pl-11 pr-4 py-3.5 bg-transparent font-mono tracking-[0.14em] text-base outline-none text-navy placeholder:text-ink-400/60"
                       />
                     </div>
                   </div>
@@ -221,15 +236,24 @@ export default function Hero() {
                   </div>
                 </div>
 
-                <button type="submit" className="btn-primary w-full !py-3.5 mt-5 group">
+                <button type="submit" className="btn-primary w-full !py-3.5 mt-5 !rounded-full group">
                   <Search className="w-4 h-4" />
                   Check Challan Status
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                 </button>
 
-                <div className="mt-3 flex items-center gap-2 text-xs text-ink-400">
-                  <Lock className="w-3.5 h-3.5 text-green-600" />
-                  Encrypted & secure — your data is never stored.
+                <div className="mt-3 flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2 text-xs text-ink-400">
+                    <Lock className="w-3.5 h-3.5 text-green-600" />
+                    Encrypted & secure — your data is never stored.
+                  </div>
+                  <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-medium text-ink-400">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                    </span>
+                    Agents online
+                  </span>
                 </div>
               </motion.form>
 
@@ -255,9 +279,13 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="card p-6 sm:p-7 relative"
+                className="card p-6 sm:p-7 relative overflow-visible"
               >
-                <div className="flex items-center justify-between">
+                <span className="absolute -top-3 left-6 inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide text-white bg-police-600 px-3 py-1.5 rounded-full shadow-soft">
+                  <ShieldCheck className="w-3 h-3" /> Verified Platform
+                </span>
+
+                <div className="flex items-center justify-between pt-1">
                   <span className="eyebrow">Service Guarantee</span>
                   <span className="inline-flex items-center gap-1.5 text-xs font-medium text-green-700 bg-green-50 border border-green-200 px-2.5 py-1 rounded-full">
                     <Lock className="w-3 h-3" /> Secure
