@@ -73,7 +73,7 @@ function AgentConnectModal({ open, onClose }) {
                 <Phone className="w-4 h-4" /> WhatsApp Us for Faster Response
               </a>
               <a href={SITE.telHref} className="btn-secondary w-full">
-                <Phone className="w-4 h-4" /> Call {SITE.phoneDisplay}
+                <Phone className="w-4 h-4" /> Call Us
               </a>
             </div>
           </motion.div>

@@ -38,7 +38,7 @@ export default function FloatingSupport() {
                 href={SITE.telHref}
                 className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-police-50 border border-police-200 text-police-700 text-sm font-medium"
               >
-                <Phone className="w-4 h-4" /> Call {SITE.phoneDisplay}
+                <Phone className="w-4 h-4" /> Call Us
               </a>
             </div>
           </motion.div>

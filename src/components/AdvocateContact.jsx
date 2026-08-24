@@ -65,7 +65,7 @@ export default function AdvocateContact() {
               <ArrowRight className="w-4 h-4" />
             </a>
             <a href={SITE.telHref} className="btn-primary">
-              <Phone className="w-4 h-4" /> Call {SITE.phoneDisplay}
+              <Phone className="w-4 h-4" /> Call Us
             </a>
           </div>
 

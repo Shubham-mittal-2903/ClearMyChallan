@@ -23,7 +23,7 @@ export default function Footer() {
 
             <div className="mt-5 flex flex-wrap gap-2.5">
               <a href={SITE.telHref} className="badge-trust">
-                <Phone className="w-4 h-4 text-police-600" /> {SITE.phoneDisplay}
+                <Phone className="w-4 h-4 text-police-600" /> Call Us
               </a>
               <a href={SITE.whatsappHref()} target="_blank" rel="noreferrer" className="badge-trust">
                 <MessageCircle className="w-4 h-4 text-green-600" /> WhatsApp

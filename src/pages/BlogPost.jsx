@@ -121,7 +121,7 @@ export default function BlogPost() {
                   <Upload className="w-4 h-4" /> Submit Documents
                 </Link>
                 <a href={SITE.telHref} className="btn-secondary">
-                  <Phone className="w-4 h-4" /> Call {SITE.phoneDisplay}
+                  <Phone className="w-4 h-4" /> Call Us
                 </a>
               </div>
             </div>

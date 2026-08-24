@@ -137,9 +137,13 @@ export default function Navbar() {
               <LayoutDashboard className="w-4 h-4" /> Dashboard
             </Link>
           )}
-          <a href={SITE.telHref} className="btn-secondary !px-4 !py-2.5 text-sm">
+          <a
+            href={SITE.telHref}
+            aria-label="Call us"
+            title="Call us"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-police-200 text-police-700 hover:bg-police-50 hover:border-police-400 transition-colors"
+          >
             <Phone className="w-4 h-4" />
-            {SITE.phoneDisplay}
           </a>
           <button onClick={() => goSection('submit')} className="btn-primary !px-5 !py-2.5 text-sm">
             <Upload className="w-4 h-4" />

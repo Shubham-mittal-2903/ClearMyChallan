@@ -303,16 +303,16 @@ export default function UPIPayment({ caseId, amount, onPaid }) {
                     QR not uploaded yet
                   </span>
                   <span className="mt-1.5 leading-relaxed">
-                    Pay using the UPI ID above, or contact{' '}
+                    Pay using the UPI ID above, or{' '}
                     <a
                       href="https://wa.me/918000727771"
                       target="_blank"
                       rel="noreferrer"
                       className="text-police-600 underline"
                     >
-                      +91 8000727771
-                    </a>{' '}
-                    on WhatsApp.
+                      contact us on WhatsApp
+                    </a>
+                    .
                   </span>
                 </div>
               ) : (
