@@ -48,7 +48,7 @@ export default function VideoShowcase() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="card overflow-hidden p-0"
+                className="card card-hover overflow-hidden p-0"
               >
                 <div className="relative aspect-video bg-navy overflow-hidden">
                   <video

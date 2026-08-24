@@ -118,7 +118,7 @@ export default function UPIPayment({ caseId, amount, onPaid }) {
               left: `${15 + (i * 6) % 70}%`,
               top: '55%',
               backgroundColor:
-                ['#16a34a', '#22c55e', '#0ea5e9', '#1D4ED8', '#f59e0b'][i % 5]
+                ['#16a34a', '#22c55e', '#0ea5e9', '#2A4D8F', '#f59e0b'][i % 5]
             }}
           />
         ))}
@@ -284,7 +284,7 @@ export default function UPIPayment({ caseId, amount, onPaid }) {
               className="absolute -inset-1 rounded-2xl opacity-90"
               style={{
                 background:
-                  'linear-gradient(135deg, #1D4ED8 0%, #22D3EE 25%, #16A34A 50%, #1D4ED8 100%)',
+                  'linear-gradient(135deg, #2A4D8F 0%, #22D3EE 25%, #16A34A 50%, #2A4D8F 100%)',
                 backgroundSize: '300% 300%',
                 filter: 'blur(6px)'
               }}
@@ -358,8 +358,8 @@ export default function UPIPayment({ caseId, amount, onPaid }) {
                         className="absolute left-4 right-4 h-[2px] rounded-full pointer-events-none"
                         style={{
                           background:
-                            'linear-gradient(90deg, transparent, #1D4ED8, transparent)',
-                          boxShadow: '0 0 8px #1D4ED8'
+                            'linear-gradient(90deg, transparent, #2A4D8F, transparent)',
+                          boxShadow: '0 0 8px #2A4D8F'
                         }}
                       />
                     </>

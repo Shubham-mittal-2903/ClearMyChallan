@@ -14,8 +14,8 @@ export default function GlassCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.5, ease: 'easeOut', delay }}
-      whileHover={hover ? { y: -4, boxShadow: '0 18px 44px -16px rgba(29, 78, 216, 0.22)' } : undefined}
-      className={`card p-6 sm:p-7 ${className}`}
+      whileHover={hover ? { y: -4, boxShadow: '0 18px 44px -16px rgba(42, 77, 143, 0.28)' } : undefined}
+      className={`card p-6 sm:p-7 border-transparent hover:border-police-200 transition-colors ${className}`}
       {...props}
     >
       {children}

@@ -49,7 +49,7 @@ export default function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.07 }}
-              className="card p-5 sm:p-6 text-center"
+              className="card card-hover p-5 sm:p-6 text-center"
             >
               <div className="font-display text-3xl sm:text-4xl font-extrabold text-police-600">
                 <Counter to={s.value} suffix={s.suffix} />

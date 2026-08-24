@@ -133,11 +133,11 @@ export default function AdvocateContact() {
       <style>{`
         .input {
           width: 100%;
-          border: 1px solid #E4E9F2;
+          border: 1px solid #E5E7EB;
           border-radius: 12px;
           padding: 0.7rem 0.9rem;
           background: #fff;
-          color: #0B1B3F;
+          color: #111827;
           outline: none;
           transition: border-color .15s, box-shadow .15s;
         }

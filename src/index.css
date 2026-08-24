@@ -58,20 +58,26 @@ body {
   .card {
     @apply bg-white border border-line rounded-2xl shadow-card;
   }
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  .card-hover:hover {
+    @apply -translate-y-1 shadow-card-hover border-police-200;
+  }
 
   .text-blue {
     @apply text-police-600;
   }
 
   .btn-primary {
-    @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-200;
+    @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-white transition-all duration-200;
     background: #2A4D8F;
     box-shadow: 0 4px 12px -4px rgba(42, 77, 143, 0.35);
   }
   .btn-primary:hover {
     background: #233F75;
     transform: translateY(-1px);
-    box-shadow: 0 8px 20px -6px rgba(42, 77, 143, 0.4);
+    box-shadow: 0 10px 24px -6px rgba(42, 77, 143, 0.45);
   }
   .btn-primary:disabled {
     @apply opacity-60 cursor-not-allowed;
@@ -79,14 +85,15 @@ body {
   }
 
   .btn-secondary {
-    @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-police-700 transition-all duration-200 bg-white border border-police-200;
+    @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-police-700 transition-all duration-200 bg-white border border-police-200;
   }
   .btn-secondary:hover {
     @apply border-police-400 bg-police-50;
+    transform: translateY(-1px);
   }
 
   .btn-whatsapp {
-    @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-200;
+    @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-white transition-all duration-200;
     background: #16A34A;
     box-shadow: 0 8px 20px -8px rgba(22, 163, 74, 0.45);
   }
@@ -99,7 +106,10 @@ body {
     @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium border border-police-100 bg-police-50 text-police-700;
   }
   .badge-trust {
-    @apply inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-sm font-medium border border-line bg-white text-ink-700 shadow-soft;
+    @apply inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-sm font-medium border border-line bg-white text-ink-700 shadow-soft transition-all duration-200;
+  }
+  .badge-trust:hover {
+    @apply border-police-300 shadow-card;
   }
 
   .section-pad {

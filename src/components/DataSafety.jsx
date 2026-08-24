@@ -50,7 +50,7 @@ export default function DataSafety() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ duration: 0.45, delay: i * 0.07 }}
-                  className="card p-5"
+                  className="card card-hover p-5"
                 >
                   <div className="flex items-center gap-2.5">
                     <span className="w-9 h-9 rounded-lg bg-police-50 border border-police-100 flex items-center justify-center">

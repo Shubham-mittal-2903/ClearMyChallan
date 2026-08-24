@@ -28,7 +28,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="card p-6 sm:p-7 relative"
+              className="card card-hover p-6 sm:p-7 relative"
             >
               <Quote className="absolute top-5 right-5 w-7 h-7 text-police-100" />
               <div className="flex items-center gap-1 mb-3">

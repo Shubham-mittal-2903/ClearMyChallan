@@ -64,7 +64,7 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.45, delay: i * 0.05 }}
-              className={`card p-6 flex flex-col ${
+              className={`card card-hover p-6 flex flex-col ${
                 region.highlight ? 'ring-2 ring-police-600 relative' : ''
               }`}
             >
