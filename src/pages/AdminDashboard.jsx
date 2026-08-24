@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
 import {
-  ShieldCheck,
   LogOut,
   Search,
   Filter,
@@ -104,10 +103,8 @@ export default function AdminDashboard() {
       {/* Top bar */}
       <header className="bg-white border-b border-line sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 py-3 flex items-center justify-between">
-          <Link to="/admin" className="flex items-center gap-2.5">
-            <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-police-600">
-              <ShieldCheck className="w-5 h-5 text-white" />
-            </span>
+          <Link to="/admin" className="flex items-center gap-2">
+            <img src="/brand/logo-icon.png" alt="ClearMyChallan" className="w-9 h-9 object-contain" />
             <div>
               <div className="font-display font-bold text-navy text-sm leading-none">
                 ClearMyChallan

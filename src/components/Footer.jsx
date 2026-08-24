@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ShieldCheck, Phone, MessageCircle } from 'lucide-react'
+import { Phone, MessageCircle } from 'lucide-react'
 import { SITE } from '../data/site.js'
 
 export default function Footer() {
@@ -9,10 +9,8 @@ export default function Footer() {
       <div className="section-pad py-12">
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-5">
-            <div className="flex items-center gap-2.5">
-              <span className="w-9 h-9 rounded-xl bg-police-600 flex items-center justify-center">
-                <ShieldCheck className="w-5 h-5 text-white" />
-              </span>
+            <div className="flex items-center gap-2">
+              <img src="/brand/logo-icon.png" alt="ClearMyChallan" className="w-9 h-9 object-contain" />
               <span className="font-display text-lg font-bold tracking-tight text-navy">
                 ClearMy<span className="text-police-600">Challan</span>
               </span>

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import {
-  ShieldCheck,
   Menu,
   X,
   Phone,
@@ -76,10 +75,8 @@ export default function Navbar() {
       }`}
     >
       <nav className="section-pad flex items-center justify-between h-16 md:h-[72px]">
-        <Link to="/" className="flex items-center gap-2.5" aria-label="ClearMyChallan home">
-          <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-police-600 shadow-soft">
-            <ShieldCheck className="w-5 h-5 text-white" />
-          </span>
+        <Link to="/" className="flex items-center gap-2" aria-label="ClearMyChallan home">
+          <img src="/brand/logo-icon.png" alt="ClearMyChallan" className="w-9 h-9 object-contain" />
           <span className="font-display text-lg sm:text-xl font-bold tracking-tight text-navy">
             ClearMy<span className="text-police-600">Challan</span>
           </span>

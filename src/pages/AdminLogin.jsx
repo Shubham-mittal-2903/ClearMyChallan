@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
-import { ShieldCheck, Mail, Lock, Loader2, ArrowRight } from 'lucide-react'
+import { Mail, Lock, Loader2, ArrowRight } from 'lucide-react'
 import { useAuth } from '../context/AuthContext.jsx'
 import { extractError } from '../services/api.js'
 
@@ -47,10 +47,8 @@ export default function AdminLogin() {
         animate={{ opacity: 1, y: 0 }}
         className="card w-full max-w-md p-7 sm:p-9"
       >
-        <Link to="/" className="flex items-center gap-2.5 mb-7">
-          <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-police-600 shadow-soft">
-            <ShieldCheck className="w-5 h-5 text-white" />
-          </span>
+        <Link to="/" className="flex items-center gap-2 mb-7">
+          <img src="/brand/logo-icon.png" alt="ClearMyChallan" className="w-9 h-9 object-contain" />
           <span className="font-display text-lg font-bold tracking-tight text-navy">
             ClearMy<span className="text-police-600">Challan</span>
           </span>
