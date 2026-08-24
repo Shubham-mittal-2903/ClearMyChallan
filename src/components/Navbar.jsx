@@ -74,7 +74,7 @@ export default function Navbar() {
           : 'bg-white/70 backdrop-blur-sm border-b border-transparent'
       }`}
     >
-      <nav className="section-pad flex items-center justify-between h-16 md:h-[72px]">
+      <nav className="section-pad flex items-center justify-between gap-4 h-16 md:h-[72px]">
         <Link to="/" className="flex items-center gap-2" aria-label="ClearMyChallan home">
           <img src="/brand/logo-icon.png" alt="ClearMyChallan" className="w-9 h-9 object-contain" />
           <span className="font-display text-lg sm:text-xl font-bold tracking-tight text-navy">
@@ -83,7 +83,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden lg:flex items-center gap-1">
+        <ul className="hidden xl:flex items-center gap-1">
           {navLinks.map((l) => (
             <li key={l.id}>
               <button
@@ -131,7 +131,7 @@ export default function Navbar() {
           </li>
         </ul>
 
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden xl:flex items-center gap-3">
           {isAdminUser && (
             <Link to="/admin" className="btn-secondary !px-3.5 !py-2.5 text-sm">
               <LayoutDashboard className="w-4 h-4" /> Dashboard
@@ -148,7 +148,7 @@ export default function Navbar() {
         </div>
 
         <button
-          className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-line bg-white text-ink-700"
+          className="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-line bg-white text-ink-700"
           onClick={() => setOpen((s) => !s)}
           aria-label="Toggle menu"
         >
@@ -162,7 +162,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden overflow-hidden border-t border-line bg-white"
+            className="xl:hidden overflow-hidden border-t border-line bg-white"
           >
             <ul className="section-pad py-4 grid gap-1">
               {navLinks.map((l) => (
