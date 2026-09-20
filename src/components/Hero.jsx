@@ -88,6 +88,8 @@ export default function Hero() {
   const [rcFile, setRcFile] = useState(null)
   const [showModal, setShowModal] = useState(false)
   const [showUpload, setShowUpload] = useState(false)
+  const reduceMotion =
+    typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
   const fileRef = useRef(null)
 
   const handleFile = (f) => {
@@ -111,10 +113,11 @@ export default function Hero() {
         {/* Cinematic video background */}
         <video
           src="/videos/demo-1.mp4"
-          autoPlay
+          autoPlay={!reduceMotion}
           muted
           loop
           playsInline
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/55 to-navy" />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 
@@ -24,12 +24,12 @@ import Footer from './components/Footer.jsx'
 import FloatingSupport from './components/FloatingSupport.jsx'
 import BackgroundOrbs from './components/ui/BackgroundOrbs.jsx'
 
-import TrackCase from './pages/TrackCase.jsx'
-import Blog from './pages/Blog.jsx'
-import BlogPost from './pages/BlogPost.jsx'
-import AdminLogin from './pages/AdminLogin.jsx'
-import AdminDashboard from './pages/AdminDashboard.jsx'
-import AdminCaseDetail from './pages/AdminCaseDetail.jsx'
+const TrackCase = lazy(() => import('./pages/TrackCase.jsx'))
+const Blog = lazy(() => import('./pages/Blog.jsx'))
+const BlogPost = lazy(() => import('./pages/BlogPost.jsx'))
+const AdminLogin = lazy(() => import('./pages/AdminLogin.jsx'))
+const AdminDashboard = lazy(() => import('./pages/AdminDashboard.jsx'))
+const AdminCaseDetail = lazy(() => import('./pages/AdminCaseDetail.jsx'))
 
 // ---- Public home -----------------------------------------------------
 // Manual-upload flow is the primary path. ChallanSearch/ChallanResults
@@ -87,6 +87,7 @@ export default function App() {
     <ThemeProvider>
       <AuthProvider>
         <BrowserRouter>
+          <Suspense fallback={<div className="min-h-screen" aria-busy="true" />}>
           <Routes>
             <Route path="/" element={<PublicHome />} />
             <Route path="/track" element={<TrackCase />} />
@@ -114,6 +115,7 @@ export default function App() {
             {/* Fallback: anything else → public home */}
             <Route path="*" element={<PublicHome />} />
           </Routes>
+          </Suspense>
 
           <ThemedToaster />
         </BrowserRouter>

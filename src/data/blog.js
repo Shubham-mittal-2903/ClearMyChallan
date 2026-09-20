@@ -192,6 +192,103 @@ export const blogPosts = [
       }
     ]
   }
+  ,
+  {
+    slug: 'gurugram-challan-resolution',
+    title: 'Gurugram Challan Resolution: Pricing, Timeline & Process',
+    excerpt:
+      'How Gurugram vehicle owners can check and resolve pending traffic challans — with the exact pricing rules for small and large fines.',
+    date: '2026-09-20',
+    readTime: '4 min read',
+    keywords: 'Gurugram challan, Gurgaon traffic challan, Gurugram e challan resolution',
+    content: [
+      {
+        h: 'Why Gurugram challans pile up',
+        p: [
+          'Gurugram sees heavy daily commuter traffic between Delhi, Haryana and the expressways, and many challans are generated automatically from cameras rather than issued on the spot. Owners often learn about them only when a document needs renewal.',
+          'Checking your status every few weeks is the simplest way to avoid old challans growing into a bigger problem.'
+        ]
+      },
+      {
+        h: 'How Gurugram pricing works',
+        p: [
+          'For Gurugram, pricing depends on the size of the fine. For challans below ₹2,000, the price is the fine amount plus a ₹500 service fee. For fines above ₹5,000, the price is a flat 80% of the fine amount.',
+          'Your exact quote is confirmed after a legal professional reviews your case, and you see the final amount before you pay anything.'
+        ]
+      },
+      {
+        h: 'The process',
+        p: [
+          'Enter your vehicle number and, if you have it, upload your RC or challan print. Our team connects with you within minutes with the details, and a legal professional reviews the case within 24 hours.',
+          'Most cases are disposed within 20–25 days. If your challan is not disposed within 25 days, the amount is fully refunded.'
+        ]
+      }
+    ]
+  }
+  ,
+  {
+    slug: 'ghaziabad-challan-check',
+    title: 'Ghaziabad Challan Check: Look Up & Resolve Your Fine',
+    excerpt:
+      'A straightforward guide for Ghaziabad vehicle owners — check pending challans and resolve them at a flat 50% of the fine.',
+    date: '2026-09-20',
+    readTime: '3 min read',
+    keywords: 'Ghaziabad challan check, Ghaziabad e challan, Ghaziabad traffic fine',
+    content: [
+      {
+        h: 'Checking a Ghaziabad challan',
+        p: [
+          'Ghaziabad vehicles often collect challans on the roads that connect to Delhi and Noida. Because many are electronic, the notice may never reach you by post or SMS.',
+          'Enter your registration number on our homepage, optionally attach your RC, and our team will come back with the challan details.'
+        ]
+      },
+      {
+        h: 'Ghaziabad pricing',
+        p: [
+          'Ghaziabad challans are resolved at a flat 50% of the fine amount, for all challans. The final price is confirmed before payment.'
+        ]
+      },
+      {
+        h: 'What to expect',
+        p: [
+          'A legal professional reviews your case within 24 hours. Disposal typically takes 20–25 days, with a full refund if it is not completed within 25 days.',
+          'Your documents are encrypted and deleted after your case is disposed.'
+        ]
+      }
+    ]
+  }
+  ,
+  {
+    slug: 'lucknow-challan-resolution',
+    title: 'Lucknow Challan Resolution: How It Works and What It Costs',
+    excerpt:
+      'Pending challan in Lucknow or Kanpur? Here is how pricing works for small and large fines and what the process looks like.',
+    date: '2026-09-20',
+    readTime: '4 min read',
+    keywords: 'Lucknow challan, Lucknow traffic challan, Kanpur challan resolution',
+    content: [
+      {
+        h: 'Challans in Lucknow and Kanpur',
+        p: [
+          'Owners in Lucknow and Kanpur can also end up with electronic challans they never noticed. Left unresolved, they can get in the way when you renew paperwork or sell the vehicle.',
+          'The first step is simply finding out what is pending against your registration number.'
+        ]
+      },
+      {
+        h: 'Lucknow and Kanpur pricing',
+        p: [
+          'For challans below ₹2,000, the price is the fine amount plus a ₹500 service fee. For fines above ₹2,000, the price is a flat 65% of the fine amount.',
+          'You always see the confirmed price before you pay.'
+        ]
+      },
+      {
+        h: 'Timeline and refund',
+        p: [
+          'Most cases are disposed within 20–25 days. If your challan is not disposed within 25 days, the amount is fully refunded.'
+        ]
+      }
+    ]
+  }
 ]
 
 export function getPostBySlug(slug) {

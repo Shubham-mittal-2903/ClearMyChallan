@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Search, Smartphone } from 'lucide-react'
+import LazyVideo from './ui/LazyVideo.jsx'
 
 const clips = [
   {
@@ -51,14 +52,7 @@ export default function VideoShowcase() {
                 className="card card-hover overflow-hidden p-0"
               >
                 <div className="relative aspect-video bg-navy overflow-hidden">
-                  <video
-                    src={clip.src}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover"
-                  />
+                  <LazyVideo src={clip.src} className="w-full h-full object-cover" />
                 </div>
                 <div className="p-5">
                   <div className="flex items-center gap-2.5">
