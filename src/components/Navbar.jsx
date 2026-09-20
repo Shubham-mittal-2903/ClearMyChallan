@@ -9,14 +9,12 @@ import {
   Clock,
   LogIn,
   LayoutDashboard,
-  FileText,
-  Sun,
-  Moon
+  FileText
 } from 'lucide-react'
 import { navLinks } from '../data/content.js'
 import { SITE } from '../data/site.js'
 import { useAuth } from '../context/AuthContext.jsx'
-import { useTheme } from '../context/ThemeContext.jsx'
+import ThemeToggle from './ui/ThemeToggle.jsx'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -25,7 +23,6 @@ export default function Navbar() {
   const location = useLocation()
   const navigate = useNavigate()
   const { user } = useAuth()
-  const { theme, toggleTheme } = useTheme()
   const isHome = location.pathname === '/'
   const isAdminUser = user && (user.role === 'admin' || user.role === 'advocate')
 
@@ -156,14 +153,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
-          <button
-            onClick={toggleTheme}
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-line bg-white text-ink-700 hover:border-police-300 hover:text-police-700 transition-colors"
-            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-          >
-            {theme === 'dark' ? <Sun className="w-4.5 h-4.5" /> : <Moon className="w-4.5 h-4.5" />}
-          </button>
+          <ThemeToggle />
           <button
             className="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-line bg-white text-ink-700"
             onClick={() => setOpen((s) => !s)}
