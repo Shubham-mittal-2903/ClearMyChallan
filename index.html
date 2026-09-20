@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="msvalidate.01" content="CC7CD9B820BDDBED19852558BEE3BBCB" />
 
+    <!-- Apply saved/system theme before paint to avoid a light/dark flash -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('cmc-theme');
+          var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (dark) document.documentElement.classList.add('dark');
+          document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- ====================================================== -->
     <!-- PRIMARY META                                           -->
     <!-- ====================================================== -->
@@ -240,7 +252,7 @@
     }
     </script>
   </head>
-  <body class="bg-white text-ink-700 antialiased">
+  <body class="antialiased">
     <!-- Accessibility: skip to main content -->
     <a
       href="#home"

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 
 import { AuthProvider } from './context/AuthContext.jsx'
+import { ThemeProvider, useTheme } from './context/ThemeContext.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
 
 import Navbar from './components/Navbar.jsx'
@@ -59,54 +60,64 @@ function PublicHome() {
   )
 }
 
+function ThemedToaster() {
+  const { theme } = useTheme()
+  const dark = theme === 'dark'
+  return (
+    <Toaster
+      position="bottom-center"
+      toastOptions={{
+        style: {
+          background: dark ? '#1A2332' : '#FFFFFF',
+          color: dark ? '#E5E9F0' : '#111827',
+          border: `1px solid ${dark ? '#2A3547' : '#E5E7EB'}`,
+          borderRadius: '14px',
+          boxShadow: '0 4px 16px -4px rgba(0,0,0,0.24)',
+          fontSize: '14px'
+        },
+        success: { iconTheme: { primary: '#16A34A', secondary: '#FFFFFF' } },
+        error: { iconTheme: { primary: '#DC2626', secondary: '#FFFFFF' } }
+      }}
+    />
+  )
+}
+
 export default function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<PublicHome />} />
-          <Route path="/track" element={<TrackCase />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
+    <ThemeProvider>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<PublicHome />} />
+            <Route path="/track" element={<TrackCase />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
 
-          <Route path="/admin/login" element={<AdminLogin />} />
-          <Route
-            path="/admin"
-            element={
-              <ProtectedRoute>
-                <AdminDashboard />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/admin/cases/:id"
-            element={
-              <ProtectedRoute>
-                <AdminCaseDetail />
-              </ProtectedRoute>
-            }
-          />
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/admin/cases/:id"
+              element={
+                <ProtectedRoute>
+                  <AdminCaseDetail />
+                </ProtectedRoute>
+              }
+            />
 
-          {/* Fallback: anything else → public home */}
-          <Route path="*" element={<PublicHome />} />
-        </Routes>
+            {/* Fallback: anything else → public home */}
+            <Route path="*" element={<PublicHome />} />
+          </Routes>
 
-        <Toaster
-          position="bottom-center"
-          toastOptions={{
-            style: {
-              background: '#FFFFFF',
-              color: '#111827',
-              border: '1px solid #E5E7EB',
-              borderRadius: '14px',
-              boxShadow: '0 4px 16px -4px rgba(0,0,0,0.08)',
-              fontSize: '14px'
-            },
-            success: { iconTheme: { primary: '#16A34A', secondary: '#FFFFFF' } },
-            error: { iconTheme: { primary: '#DC2626', secondary: '#FFFFFF' } }
-          }}
-        />
-      </BrowserRouter>
-    </AuthProvider>
+          <ThemedToaster />
+        </BrowserRouter>
+      </AuthProvider>
+    </ThemeProvider>
   )
 }

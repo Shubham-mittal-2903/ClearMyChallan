@@ -5,6 +5,9 @@
 :root {
   color-scheme: light;
 }
+.dark {
+  color-scheme: dark;
+}
 
 html {
   scroll-behavior: smooth;
@@ -26,6 +29,7 @@ body {
     radial-gradient(700px 480px at -10% 10%, rgba(42, 77, 143, 0.03), transparent 60%),
     #FFFFFF;
   overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 ::selection {
@@ -48,6 +52,156 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #2A4D8F;
+}
+
+/* =======================================================================
+   DARK THEME
+   Global overrides keyed off the `.dark` class on <html> (toggled by
+   ThemeContext). Targets the same utility/component class names used
+   throughout the app so every existing usage picks up dark styling
+   automatically — no per-component `dark:` prefixes needed.
+   ======================================================================= */
+.dark body {
+  color: #CBD5E1;
+  background:
+    radial-gradient(900px 500px at 90% -10%, rgba(107, 138, 203, 0.07), transparent 60%),
+    radial-gradient(700px 480px at -10% 10%, rgba(107, 138, 203, 0.05), transparent 60%),
+    #0B1220;
+}
+.dark ::selection {
+  background: rgba(107, 138, 203, 0.28);
+  color: #F1F5F9;
+}
+.dark ::-webkit-scrollbar-track {
+  background: #0B1220;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #2A3547;
+  border: 2px solid #0B1220;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6B8ACB;
+}
+
+/* Surfaces */
+.dark .bg-white,
+.dark .bg-white\/90,
+.dark .bg-white\/80,
+.dark .bg-white\/70,
+.dark .bg-surface,
+.dark .bg-surface-soft,
+.dark .bg-surface-muted {
+  background-color: #111A2C;
+}
+.dark .bg-surface-soft {
+  background-color: #0E1728;
+}
+.dark .bg-surface-muted {
+  background-color: #0C1422;
+}
+.dark .border-line {
+  border-color: #22304A;
+}
+.dark .shadow-soft,
+.dark .shadow-card {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03), 0 4px 16px -4px rgba(0, 0, 0, 0.5);
+}
+.dark .shadow-card-hover {
+  box-shadow: 0 0 0 1px rgba(107, 138, 203, 0.15), 0 12px 32px -8px rgba(0, 0, 0, 0.6);
+}
+/* .card / .glass bake `bg-white` in via @apply at build time, so the
+   literal `.bg-white` override above never reaches them — they need
+   their own explicit dark rule. */
+.dark .card {
+  background-color: #111A2C;
+  border-color: #22304A;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03), 0 4px 16px -4px rgba(0, 0, 0, 0.5);
+}
+.dark .glass {
+  background-color: rgba(17, 26, 44, 0.8);
+  border-color: #22304A;
+}
+
+/* Text */
+.dark .text-navy,
+.dark .text-ink-900 {
+  color: #F1F5F9;
+}
+.dark .text-ink-700 {
+  color: #CBD5E1;
+}
+.dark .text-ink-500 {
+  color: #94A3B8;
+}
+.dark .text-ink-400 {
+  color: #7284A0;
+}
+
+/* Buttons */
+.dark .btn-secondary {
+  background-color: #111A2C;
+  border-color: #2A3F63;
+  color: #9CB4E0;
+}
+.dark .btn-secondary:hover {
+  background-color: #16213A;
+  border-color: #3D5A8C;
+}
+.dark .badge-trust {
+  background-color: #111A2C;
+  border-color: #22304A;
+  color: #CBD5E1;
+}
+.dark .badge-trust:hover {
+  border-color: #3D5A8C;
+}
+.dark .chip {
+  background-color: rgba(107, 138, 203, 0.12);
+  border-color: rgba(107, 138, 203, 0.28);
+  color: #A9C0EA;
+}
+
+/* Tinted icon-badge backgrounds (bg-*-50 + border-*-100/200 pattern) */
+.dark .bg-police-50,
+.dark .bg-police-100 { background-color: rgba(107, 138, 203, 0.12); }
+.dark .border-police-100,
+.dark .border-police-200 { border-color: rgba(107, 138, 203, 0.3); }
+.dark .bg-green-50 { background-color: rgba(34, 197, 94, 0.12); }
+.dark .border-green-200 { border-color: rgba(34, 197, 94, 0.3); }
+.dark .bg-amber-50 { background-color: rgba(245, 158, 11, 0.12); }
+.dark .border-amber-200 { border-color: rgba(245, 158, 11, 0.3); }
+.dark .bg-red-50 { background-color: rgba(239, 68, 68, 0.12); }
+.dark .border-red-200 { border-color: rgba(239, 68, 68, 0.3); }
+.dark .bg-rose-50 { background-color: rgba(244, 63, 94, 0.12); }
+.dark .border-rose-200 { border-color: rgba(244, 63, 94, 0.3); }
+.dark .bg-blue-50 { background-color: rgba(59, 130, 246, 0.12); }
+.dark .border-blue-200 { border-color: rgba(59, 130, 246, 0.3); }
+.dark .bg-cyan-50 { background-color: rgba(6, 182, 212, 0.12); }
+.dark .border-cyan-200 { border-color: rgba(6, 182, 212, 0.3); }
+.dark .bg-indigo-50 { background-color: rgba(99, 102, 241, 0.12); }
+.dark .border-indigo-200 { border-color: rgba(99, 102, 241, 0.3); }
+.dark .bg-violet-50 { background-color: rgba(139, 92, 246, 0.12); }
+.dark .border-violet-200 { border-color: rgba(139, 92, 246, 0.3); }
+
+/* Form inputs */
+.dark .input,
+.dark input,
+.dark textarea,
+.dark select {
+  color: #F1F5F9;
+}
+.dark .input {
+  background-color: #0E1728;
+  border-color: #22304A;
+}
+.dark .input::placeholder {
+  color: #64748B;
+}
+
+/* Skeleton loader */
+.dark .skeleton {
+  background: linear-gradient(90deg, #111A2C, #16213A, #111A2C);
+  background-size: 1000px 100%;
 }
 
 @layer components {
