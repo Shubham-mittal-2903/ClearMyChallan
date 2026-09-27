@@ -289,6 +289,94 @@ export const blogPosts = [
       }
     ]
   }
+  ,
+  {
+    slug: 'rc-transfer-challan-clearance',
+    title: 'Pending Challan Blocking Your RC Transfer? Here Is the Fix',
+    excerpt:
+      'RTOs across India routinely hold up RC transfers and ownership changes over unpaid challans. Here is how to find out what is pending and clear it before your appointment.',
+    date: '2026-09-27',
+    readTime: '4 min read',
+    keywords: 'challan blocking RC transfer, RC transfer pending challan, vehicle ownership transfer challan clearance',
+    content: [
+      {
+        h: 'Why RC transfer gets stuck on a challan',
+        p: [
+          'When you sell a vehicle or transfer ownership, most RTOs now cross-check the registration number against pending e-Challans before processing the transfer. Even a small, years-old challan can hold up the paperwork.',
+          'Buyers are often caught off guard because the challan was issued under the previous owner, but it still sits against the vehicle number itself.'
+        ]
+      },
+      {
+        h: 'Check before you book your RTO appointment',
+        p: [
+          'Enter the vehicle number on our homepage before you go to the RTO. If anything is pending, you will know the exact amount and offence instead of finding out at the counter.',
+          'This is especially worth doing before a used-vehicle purchase — check the challan history on the registration number, not just what the seller tells you.'
+        ]
+      },
+      {
+        h: 'Clearing it quickly',
+        p: [
+          'Once you know what is pending, a legal professional reviews the case and quotes a price — starting from 60% of the fine depending on your city. Most cases are disposed within 20–25 days, with a full refund if that timeline is missed.',
+          'If you are on a tight RTO deadline, mention it when our team contacts you — we prioritise cases that are blocking a transfer or renewal wherever possible.'
+        ]
+      }
+    ]
+  }
+  ,
+  {
+    slug: 'avoid-traffic-challan-tips',
+    title: '7 Common Reasons Drivers Get Challaned — and How to Avoid Them',
+    excerpt:
+      'Most traffic challans in Indian cities come from a small, repeatable set of mistakes. Knowing them is the cheapest way to cut down on fines.',
+    date: '2026-09-27',
+    readTime: '5 min read',
+    keywords: 'avoid traffic challan, common traffic violations India, how to avoid e challan',
+    content: [
+      {
+        h: '1. Expired documents',
+        p: [
+          'PUC certificates and insurance lapse quietly, and ANPR cameras at toll points and junctions flag them automatically. Set a reminder a few weeks before either expires.'
+        ]
+      },
+      {
+        h: '2. No-entry zones and one-ways',
+        p: [
+          'Delhi, Noida and Gurugram all have time-based no-entry rules for certain vehicle types that change through the day. A route that was legal at 11am can trigger a challan at 6pm.'
+        ]
+      },
+      {
+        h: '3. Signal jumping on amber',
+        p: [
+          'Cameras at major junctions capture the amber-to-red transition, not just red. If you are not confident you will clear the line before amber ends, it is safer to stop.'
+        ]
+      },
+      {
+        h: '4. Triple riding and no helmet',
+        p: [
+          'Two-wheeler offences are among the most heavily enforced categories in UP and Haryana cities. These are also some of the fastest-growing fine amounts under the current rules.'
+        ]
+      },
+      {
+        h: '5. Parking in camera-monitored zones',
+        p: [
+          'Many commercial stretches now have automated parking enforcement. A "quick 5-minute stop" outside a marked zone is often enough to trigger a challan.'
+        ]
+      },
+      {
+        h: '6. Using a phone while driving',
+        p: [
+          'Even glancing at a phone mounted on the dashboard can be flagged if it looks like handheld use to enforcement cameras. Use a proper mount and avoid touching the phone while moving.'
+        ]
+      },
+      {
+        h: '7. Not checking your challan history at all',
+        p: [
+          'The most common reason challans pile up isn\'t repeat offences — it is simply not checking. A challan can sit unpaid for months without a notice ever reaching you.',
+          'Checking your vehicle number every couple of months, especially after any of the situations above, is the single easiest habit that keeps a small fine from becoming a bigger problem.'
+        ]
+      }
+    ]
+  }
 ]
 
 export function getPostBySlug(slug) {
