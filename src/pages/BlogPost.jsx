@@ -39,7 +39,30 @@ function ArticleSchema({ post }) {
       mainEntityOfPage: `https://www.clearmychallan.co.in/blog/${post.slug}`
     })
     document.head.appendChild(script)
-    return () => document.getElementById('article-schema')?.remove()
+
+    const breadcrumb = document.createElement('script')
+    breadcrumb.type = 'application/ld+json'
+    breadcrumb.id = 'breadcrumb-schema'
+    breadcrumb.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.clearmychallan.co.in/' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.clearmychallan.co.in/blog' },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: post.title,
+          item: `https://www.clearmychallan.co.in/blog/${post.slug}`
+        }
+      ]
+    })
+    document.head.appendChild(breadcrumb)
+
+    return () => {
+      document.getElementById('article-schema')?.remove()
+      document.getElementById('breadcrumb-schema')?.remove()
+    }
   }, [post])
   return null
 }
@@ -56,7 +79,21 @@ export default function BlogPost() {
 
   if (!post) return <Navigate to="/blog" replace />
 
-  const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 2)
+  // Rank the other posts by keyword overlap so "related articles" are
+  // actually related (city posts link to each other, etc.) instead of
+  // always showing the same first two — this also spreads link equity
+  // from already-indexed posts to newer, not-yet-indexed ones.
+  const postWords = new Set(post.keywords.toLowerCase().split(/[\s,]+/).filter((w) => w.length > 3))
+  const related = blogPosts
+    .filter((p) => p.slug !== post.slug)
+    .map((p) => {
+      const words = p.keywords.toLowerCase().split(/[\s,]+/)
+      const overlap = words.filter((w) => postWords.has(w)).length
+      return { post: p, score: overlap }
+    })
+    .sort((a, b) => b.score - a.score || new Date(a.post.date) - new Date(b.post.date))
+    .slice(0, 3)
+    .map((r) => r.post)
 
   return (
     <div className="relative min-h-screen">
@@ -132,7 +169,7 @@ export default function BlogPost() {
               <h3 className="font-display text-lg font-bold text-navy mb-4">
                 Related articles
               </h3>
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {related.map((p) => (
                   <Link key={p.slug} to={`/blog/${p.slug}`} className="card p-5 hover:shadow-card-hover transition-shadow">
                     <h4 className="font-display font-bold text-navy text-sm">{p.title}</h4>
