@@ -377,6 +377,57 @@ export const blogPosts = [
       }
     ]
   }
+  ,
+  {
+    slug: 'diwali-travel-challan-checklist',
+    title: 'Diwali Travel Checklist: Clear Your Challans Before You Hit the Road',
+    excerpt:
+      'Festive-season traffic means more cameras, more checkpoints and more challans. A short pre-trip checklist so a pending fine does not spoil your Diwali.',
+    date: '2026-10-28',
+    readTime: '4 min read',
+    keywords: 'diwali travel challan, check challan before trip, festival traffic rules, pending challan highway',
+    content: [
+      {
+        h: 'Why Diwali is challan season',
+        p: [
+          'Delhi-NCR, Uttar Pradesh and Haryana see a surge of vehicles in the week before Diwali, and enforcement rises with it. Extra checkpoints, ANPR cameras on expressways and festive-market no-parking zones all mean more e-challans issued in a short window.',
+          'Many of those challans only show up weeks later, long after the holiday — usually when you try to renew insurance or sell the vehicle.'
+        ]
+      },
+      {
+        h: 'Step 1: Check your vehicle for pending challans',
+        p: [
+          'Before a long drive, look up your vehicle number once. A pending challan can sit unnoticed for months, and an unpaid one can escalate to a court notice.',
+          'You can check your status on our Track page in under two minutes with just your vehicle number.'
+        ]
+      },
+      {
+        h: 'Step 2: Carry valid documents',
+        p: [
+          'Keep your RC, driving licence, insurance and PUC certificate valid and accessible. An expired PUC or insurance is one of the easiest challans to avoid and one of the most commonly issued during festive checks.'
+        ]
+      },
+      {
+        h: 'Step 3: Mind festive-market parking and no-entry hours',
+        p: [
+          'Popular markets in Delhi, Noida, Gurugram and Lucknow restrict parking and vehicle entry during peak shopping hours. A quick stop outside a marked bay is enough to be photographed and challaned.'
+        ]
+      },
+      {
+        h: 'Step 4: Do not drive after drinking, and avoid overloading',
+        p: [
+          'Festive gatherings are exactly when drunk-driving drives and overload checks are intensified, and these are among the highest-penalty offences. Plan a designated driver or a cab.'
+        ]
+      },
+      {
+        h: 'Already have a pending challan?',
+        p: [
+          'If a challan is already pending, you do not need to queue at a traffic court over the holidays. A licensed legal professional can handle the disposal for you — with a transparent, city-based quote, disposal in 20–25 days, and a full refund if it is not done.',
+          'Submit your documents once and we will take it from there, so you can enjoy the festival.'
+        ]
+      }
+    ]
+  }
 ]
 
 export function getPostBySlug(slug) {

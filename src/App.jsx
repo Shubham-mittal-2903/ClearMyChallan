@@ -8,6 +8,7 @@ import ProtectedRoute from './components/ProtectedRoute.jsx'
 
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
+import DiwaliStrip from './components/DiwaliStrip.jsx'
 import VideoShowcase from './components/VideoShowcase.jsx'
 import TrustBar from './components/TrustBar.jsx'
 import SubmitCase from './components/SubmitCase.jsx'
@@ -41,6 +42,7 @@ function PublicHome() {
       <Navbar />
       <main className="relative z-10">
         <Hero />
+        <DiwaliStrip />
         <VideoShowcase />
         <TrustBar />
         <SubmitCase />
