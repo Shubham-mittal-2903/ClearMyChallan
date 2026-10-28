@@ -428,6 +428,86 @@ export const blogPosts = [
       }
     ]
   }
+  ,
+  {
+    slug: 'challan-disposal-vs-payment',
+    title: 'Challan Disposal vs Paying the Fine: What Is the Difference?',
+    excerpt:
+      'Paying an e-challan online and getting it disposed through court are not the same thing. Knowing which one applies saves money and avoids repeat notices.',
+    date: '2026-10-28',
+    readTime: '5 min read',
+    keywords: 'challan disposal, virtual court challan, pay challan online, court challan notice, challan settlement',
+    content: [
+      {
+        h: 'Two different routes for two different kinds of challan',
+        p: [
+          'Some challans are "compoundable": you can pay the fine online and the matter closes. Others are sent to a virtual or physical traffic court, where they must be formally disposed of by a court order before they clear from your vehicle record.',
+          'Most people assume every challan can simply be paid on a portal. When a challan is in the court category, the payment option is not offered, and the notice keeps coming until it is disposed.'
+        ]
+      },
+      {
+        h: 'How to tell which one you have',
+        p: [
+          'Check the challan status for your vehicle number. If it shows a payable amount with a pay option, it is usually compoundable. If it shows "sent to court" or "virtual court", it needs disposal.',
+          'The status can also change over time: an unpaid challan may be moved to court after the compounding window ends.'
+        ]
+      },
+      {
+        h: 'Why court challans are trickier',
+        p: [
+          'They require appearing or being represented before the court, and the amount is decided by the court rather than fixed in advance. Missing the date can lead to a further notice.',
+          'This is where most vehicle owners lose time: queues, repeat visits and unclear next steps.'
+        ]
+      },
+      {
+        h: 'How a legal professional helps',
+        p: [
+          'A licensed legal professional can represent you for the disposal, so you do not have to attend yourself. With ClearMyChallan you get a transparent, city-based quote, disposal in 20–25 days, and a full refund if it is not completed.',
+          'Start by checking your status, then submit your documents once and we handle the rest.'
+        ]
+      }
+    ]
+  }
+  ,
+  {
+    slug: 'challan-before-selling-vehicle',
+    title: 'Selling or Buying a Used Vehicle? Check for Pending Challans First',
+    excerpt:
+      'Pending challans stay attached to the vehicle, not the owner. Here is why both buyer and seller should check before any used-vehicle deal closes.',
+    date: '2026-10-28',
+    readTime: '4 min read',
+    keywords: 'used car challan check, sell bike pending challan, vehicle transfer challan, buy second hand vehicle challan',
+    content: [
+      {
+        h: 'Challans follow the vehicle',
+        p: [
+          'An e-challan is linked to the vehicle registration number. If it is unpaid when ownership changes, it can block the RC transfer and surface later as a problem on paper for the new owner.',
+          'This is why festival-season used-vehicle deals are the most common time people discover old fines.'
+        ]
+      },
+      {
+        h: 'If you are the seller',
+        p: [
+          'Check your vehicle number before listing it. Clearing challans up front avoids price negotiation over "unknown dues" and keeps the transfer smooth.',
+          'Keep proof of payment or disposal; buyers and RTO offices often ask for it.'
+        ]
+      },
+      {
+        h: 'If you are the buyer',
+        p: [
+          'Ask for the registration number and check it yourself before paying the token amount. Also verify that insurance and PUC are valid, as expired ones attract their own challans.',
+          'Make the final payment conditional on the challans being cleared, and record that in writing.'
+        ]
+      },
+      {
+        h: 'When there are pending challans',
+        p: [
+          'If dues are already pending, they can be cleared through payment or, for court challans, disposal by a legal professional. Our team can quote a transparent, city-based price and complete disposal in 20–25 days, or you get a full refund.',
+          'See our RC transfer guide for how this fits into the ownership-transfer process.'
+        ]
+      }
+    ]
+  }
 ]
 
 export function getPostBySlug(slug) {

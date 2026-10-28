@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useParams, Navigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Calendar, Clock, Upload, Phone } from 'lucide-react'
+import { ArrowLeft, Calendar, Clock, Upload, Phone, Share2, Link2 } from 'lucide-react'
 import Navbar from '../components/Navbar.jsx'
 import Footer from '../components/Footer.jsx'
 import FloatingSupport from '../components/FloatingSupport.jsx'
@@ -16,6 +16,32 @@ function formatDate(d) {
     month: 'long',
     year: 'numeric'
   })
+}
+
+function ShareBar({ post }) {
+  const [copied, setCopied] = useState(false)
+  const url = `https://www.clearmychallan.co.in/blog/${post.slug}`
+  const wa = `https://wa.me/?text=${encodeURIComponent(`${post.title} — ${url}`)}`
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(url)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {}
+  }
+  return (
+    <div className="mt-6 flex flex-wrap items-center gap-2 text-sm">
+      <span className="inline-flex items-center gap-1.5 text-ink-500">
+        <Share2 className="w-4 h-4" /> Share
+      </span>
+      <a href={wa} target="_blank" rel="noopener noreferrer" className="btn-secondary !py-1.5 !px-3 text-xs">
+        WhatsApp
+      </a>
+      <button type="button" onClick={copy} className="btn-secondary !py-1.5 !px-3 text-xs">
+        <Link2 className="w-3.5 h-3.5" /> {copied ? 'Copied' : 'Copy link'}
+      </button>
+    </div>
+  )
 }
 
 function ArticleSchema({ post }) {
@@ -128,6 +154,7 @@ export default function BlogPost() {
               {post.title}
             </h1>
             <p className="mt-4 text-lg text-ink-500 leading-relaxed">{post.excerpt}</p>
+            <ShareBar post={post} />
 
             <div className="mt-8 grid gap-7">
               {post.content.map((block) => (
