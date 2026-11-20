@@ -1,5 +1,4 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Sparkles, ArrowRight, Phone } from 'lucide-react'
 import { SITE } from '../data/site.js'
@@ -8,34 +7,13 @@ import { SITE } from '../data/site.js'
 // No discount is advertised — only the real guarantee and a useful reminder.
 const SHOW_UNTIL = new Date('2026-11-16T00:00:00+05:30')
 
-function Diya({ delay = 0 }) {
-  return (
-    <motion.span
-      aria-hidden
-      className="inline-block w-2.5 h-2.5 rounded-full bg-amber-400"
-      style={{ boxShadow: '0 0 14px 4px rgba(251,191,36,0.55)' }}
-      animate={{ opacity: [0.55, 1, 0.55], scale: [0.9, 1.15, 0.9] }}
-      transition={{ duration: 2.4, repeat: Infinity, delay, ease: 'easeInOut' }}
-    />
-  )
-}
-
 export default function DiwaliStrip() {
   if (new Date() > SHOW_UNTIL) return null
   return (
     <section aria-label="Diwali travel reminder" className="relative z-10 section-pad -mt-6 md:-mt-8 mb-4">
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+      <div
         className="max-w-5xl mx-auto rounded-3xl border border-amber-300/60 dark:border-amber-400/20 bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 dark:from-[#2a1d0b] dark:via-[#2f2010] dark:to-[#2a1d0b] px-5 py-5 md:px-8 md:py-6 flex flex-col md:flex-row md:items-center gap-4 md:gap-8"
       >
-        <div className="flex items-center gap-1.5 shrink-0">
-          <Diya />
-          <Diya delay={0.5} />
-          <Diya delay={1} />
-        </div>
         <div className="flex-1">
           <p className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-300">
             <Sparkles className="w-3.5 h-3.5" /> Happy Diwali
@@ -56,7 +34,7 @@ export default function DiwaliStrip() {
             <Phone className="w-4 h-4" /> Call
           </a>
         </div>
-      </motion.div>
+      </div>
     </section>
   )
 }
