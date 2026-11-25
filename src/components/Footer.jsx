@@ -31,7 +31,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
+          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-8">
             <FooterCol
               title="Product"
               links={[
@@ -40,6 +40,17 @@ export default function Footer() {
                 ['Pricing', '#pricing'],
                 ['How it Works', '#how'],
                 ['Data Safety', '#safety']
+              ]}
+            />
+            <FooterCol
+              title="Cities"
+              links={[
+                ['Delhi', '/challan-resolution/delhi'],
+                ['Noida', '/challan-resolution/noida'],
+                ['Gurugram', '/challan-resolution/gurugram'],
+                ['Ghaziabad', '/challan-resolution/ghaziabad'],
+                ['Lucknow', '/challan-resolution/lucknow'],
+                ['Agra', '/challan-resolution/agra']
               ]}
             />
             <FooterCol

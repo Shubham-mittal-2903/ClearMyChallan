@@ -28,6 +28,8 @@ import BackgroundOrbs from './components/ui/BackgroundOrbs.jsx'
 const TrackCase = lazy(() => import('./pages/TrackCase.jsx'))
 const Blog = lazy(() => import('./pages/Blog.jsx'))
 const BlogPost = lazy(() => import('./pages/BlogPost.jsx'))
+const CityPage = lazy(() => import('./pages/CityPage.jsx'))
+const NotFound = lazy(() => import('./pages/NotFound.jsx'))
 const AdminLogin = lazy(() => import('./pages/AdminLogin.jsx'))
 const AdminDashboard = lazy(() => import('./pages/AdminDashboard.jsx'))
 const AdminCaseDetail = lazy(() => import('./pages/AdminCaseDetail.jsx'))
@@ -95,6 +97,7 @@ export default function App() {
             <Route path="/track" element={<TrackCase />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/challan-resolution/:city" element={<CityPage />} />
 
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route
@@ -114,8 +117,7 @@ export default function App() {
               }
             />
 
-            {/* Fallback: anything else → public home */}
-            <Route path="*" element={<PublicHome />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           </Suspense>
 

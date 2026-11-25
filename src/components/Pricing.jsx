@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Clock, RotateCcw, MapPin, Check, ArrowRight } from 'lucide-react'
 import { pricingTable } from '../data/content.js'
 import { SITE } from '../data/site.js'
+import SavingsCalculator from './SavingsCalculator.jsx'
 
 export default function Pricing() {
   const go = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -54,6 +55,10 @@ export default function Pricing() {
             </div>
           </div>
         </motion.div>
+
+        <div className="mb-10">
+          <SavingsCalculator />
+        </div>
 
         {/* City pricing cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
